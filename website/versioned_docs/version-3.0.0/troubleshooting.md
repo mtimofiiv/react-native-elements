@@ -156,3 +156,21 @@ yarn add @expo/vector-icons --save
   [Solution 1](#using-react-native-init)
 - If you choose to use Expo SDK (ExpoKit), use
   [Solution 2](#using-an-expo-app-create-react-native-app-or-expo-xde)
+
+## Custom fonts not working on Android
+
+Sometimes, custom fonts loaded will not seem to work on Android. This can 
+be fixed by specifying `fontWeight: 'normal'` on the style. For example, when
+using `ThemeProvider`, you might want to give all text a custom font, so your
+theme might look like this:
+
+```js
+const theme = {
+  Text: {
+    style: {
+      fontFamily: 'Inter-Medium',
+      fontWeight: 'normal'
+    }
+  }
+}
+```
